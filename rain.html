@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rain Bentres — Portfolio</title>
+  <link rel="stylesheet" href="rain.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="welcome-overlay" class="welcome-overlay" role="status" aria-label="Loading">
+    <div class="loader-ring"></div>
+  </div>
+
+  <header class="navbar">
+    <a href="#home" class="nav-brand" onclick="navigateTo('home')">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Rain Logo" class="brand-logo" onerror="this.src='https://placehold.co/100x100/121212/d4af37?text=RB'"/>
+      </div>
+      <div class="logo-text-group">
+        <span class="logo-text-main">RAIN</span>
+        <span class="logo-text-hover">ONYX_NEKO</span>
+      </div>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#home" id="nav-home" class="nav-btn active" onclick="navigateTo('home')">
+        <i class="fa-solid fa-house nav-icon"></i>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="#about" id="nav-about" class="nav-btn" onclick="navigateTo('about')">
+        <i class="fa-solid fa-user nav-icon"></i>
+        <span class="nav-label">About</span>
+      </a>
+      <a href="#skills" id="nav-skills" class="nav-btn" onclick="navigateTo('skills')">
+        <i class="fa-solid fa-code nav-icon"></i>
+        <span class="nav-label">Skills</span>
+      </a>
+      <a href="#projects" id="nav-projects" class="nav-btn" onclick="navigateTo('projects')">
+        <i class="fa-solid fa-laptop-code nav-icon"></i>
+        <span class="nav-label">Projects</span>
+      </a>
+      <a href="#services" id="nav-services" class="nav-btn" onclick="navigateTo('services')">
+        <i class="fa-solid fa-gears nav-icon"></i>
+        <span class="nav-label">Services</span>
+      </a>
+      <a href="#contact" id="nav-contact" class="nav-btn" onclick="navigateTo('contact')">
+        <i class="fa-solid fa-paper-plane nav-icon"></i>
+        <span class="nav-label">Contact</span>
+      </a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileSidebar()" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileSidebar()"></div>
+  <aside class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title"><i class="fa-solid fa-compass"></i> NAVIGATION</span>
+      <button class="close-sidebar-btn" onclick="toggleMobileSidebar()" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#home" class="mobile-link" onclick="navigateTo('home'); toggleMobileSidebar();"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#about" class="mobile-link" onclick="navigateTo('about'); toggleMobileSidebar();"><i class="fa-solid fa-user"></i> About</a></li>
+      <li><a href="#journey" class="mobile-link" onclick="navigateTo('journey'); toggleMobileSidebar();"><i class="fa-solid fa-flag"></i> Journey</a></li>
+      <li><a href="#skills" class="mobile-link" onclick="navigateTo('skills'); toggleMobileSidebar();"><i class="fa-solid fa-code"></i> Skills</a></li>
+      <li><a href="#projects" class="mobile-link" onclick="navigateTo('projects'); toggleMobileSidebar();"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
+      <li><a href="#services" class="mobile-link" onclick="navigateTo('services'); toggleMobileSidebar();"><i class="fa-solid fa-gears"></i> Services</a></li>
+      <li><a href="#credentials" class="mobile-link" onclick="navigateTo('credentials'); toggleMobileSidebar();"><i class="fa-solid fa-certificate"></i> Credentials</a></li>
+      <li><a href="#contact" class="mobile-link" onclick="navigateTo('contact'); toggleMobileSidebar();"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-container">
+
+    <section id="section-home" class="page-section active">
+      <div class="home-content-row">
+        
+        <div class="hero-text-col">
+          <span class="eyebrow"><i class="fa-solid fa-hand"></i> Ciao!, it's me</span>
+          <h1 class="hero-title">ARAINE BENTRES</h1>
+          <p class="hero-role"><i class="fa-solid fa-graduation-cap"></i> BSIT Student | Photographer | Editor</p>
+          <p class="hero-description">Currently studying IT at Data Center College of the Philippines. Had my training at BVS college completing CSS NCII during my Senior High year.</p>
+
+          <div class="hero-actions">
+            <button class="btn btn-solid" onclick="navigateTo('projects')"><i class="fa-solid fa-folder-open"></i> View Projects</button>
+            <button class="btn btn-outline" onclick="navigateTo('contact')"><i class="fa-solid fa-paper-plane"></i> Get In Touch</button>
+          </div>
+
+          <div class="custom-audio-player">
+            <audio id="portfolioAudio"></audio>
+
+            <div class="audio-info">
+              <i class="fa-solid fa-music music-icon"></i>
+              <span class="track-name" id="trackTitle">Fetty Wap - Trap Queen</span>
+            </div>
+            <div class="audio-controls">
+              <button class="nav-audio-btn" onclick="prevAudio()" aria-label="Previous Track">
+                <i class="fa-solid fa-backward-step"></i>
+              </button>
+              <button class="play-btn" id="audioPlayBtn" onclick="toggleAudioPlay()" aria-label="Play/Pause">
+                <i class="fa-solid fa-play" id="playIcon"></i>
+              </button>
+              <button class="nav-audio-btn" onclick="nextAudio()" aria-label="Next Track">
+                <i class="fa-solid fa-forward-step"></i>
+              </button>
+              <div class="time-slider-wrapper">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="audioProgress" value="0" min="0" max="100" oninput="seekAudio()">
+                <span id="durationTime">0:00</span>
+              </div>
+              <i class="fa-solid fa-volume-high volume-icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-gallery-col">
+          <div class="expanding-cards-container">
+            <div class="expanding-card">
+              <img src="gal1.jpg" alt="Web Development" class="expanding-card-img" onerror="this.src='https://placehold.co/800x600/181818/d4af37?text=BSIT+Student'"/>
+              <div class="card-overlay">
+                <span class="card-badge">01</span>
+                <h3 class="card-title">BSIT Student</h3>
+                <p class="card-desc">3rd Yr student at DCCP of Baguio City</p>
+              </div>
+            </div>
+
+            <div class="expanding-card">
+              <img src="gal2.jpg" alt="UI/UX & System Design" class="expanding-card-img" onerror="this.src='https://placehold.co/800x600/181818/d4af37?text=Gamer'"/>
+              <div class="card-overlay">
+                <span class="card-badge">02</span>
+                <h3 class="card-title">Gamer</h3>
+                <p class="card-desc">Addict Gamer Since I was 8 yrs old.</p>
+              </div>
+            </div>
+
+            <div class="expanding-card">
+              <img src="gal3.jpg" alt="IT Technical Support" class="expanding-card-img" onerror="this.src='https://placehold.co/800x600/181818/d4af37?text=IT+Services'"/>
+              <div class="card-overlay">
+                <span class="card-badge">03</span>
+                <h3 class="card-title">Otaku</h3>
+                <p class="card-desc">Subtitles On, Real world Off, and IDGAF</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="section-about" class="page-section">
+      <div class="about-content-row">
+        
+        <div class="about-hero-box">
+          <span class="eyebrow"><i class="fa-solid fa-user-gear"></i> ABOUT ME</span>
+          <h2>Rain Bentres</h2>
+          <p>Completed my training and got my CSS NCII at BVS College during my Senior High yr at AMPMNHS. Right now, I am currently studying at DCCP as an IT 3rd year college.</p>
+        </div>
+
+        <div class="carousel-3d-wrapper">
+          <div class="carousel-3d-scene">
+            <div class="carousel-3d-stage" id="carouselStage">
+              <div class="c3d-card card-1">
+                <img src="ME1.jpg" alt="Rain 1" onerror="this.src='https://placehold.co/300x400/181818/d4af37?text=Rain+1'"/>
+                <div class="c3d-label">IMAGINATIVE</div>
+              </div>
+              <div class="c3d-card card-2">
+                <img src="ME2.jpg" alt="Rain 2" onerror="this.src='https://placehold.co/300x400/181818/d4af37?text=Rain+2'"/>
+                <div class="c3d-label">CURIOS</div>
+              </div>
+              <div class="c3d-card card-3">
+                <img src="ME3.jpg" alt="Rain 3" onerror="this.src='https://placehold.co/300x400/181818/d4af37?text=Rain+3'"/>
+                <div class="c3d-label">INDEPENDENT</div>
+              </div>
+              <div class="c3d-card card-4">
+                <img src="ME4.jpg" alt="Rain 4" onerror="this.src='https://placehold.co/300x400/181818/d4af37?text=Rain+4'"/>
+                <div class="c3d-label">CREATIVE</div>
+              </div>
+              <div class="c3d-card card-5">
+                <img src="ME5.jpg" alt="Rain 5" onerror="this.src='https://placehold.co/300x400/181818/d4af37?text=Rain+5'"/>
+                <div class="c3d-label">ADVENTUROUS</div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-nav-btn" onclick="rotateCarousel(-72)" aria-label="Previous Image"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+            <button class="carousel-nav-btn" onclick="rotateCarousel(72)" aria-label="Next Image">Next <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="about-subnav-container">
+        <h3 class="subnav-header"><i class="fa-solid fa-list-check"></i> Explore Sections</h3>
+        <div class="about-options-scroll">
+          <div class="option-card" onclick="switchAboutTab('journey')">
+            <div class="option-card-icon"><i class="fa-solid fa-compass"></i></div>
+            <div class="option-card-info">
+              <h4>Journey</h4>
+              <span>My learning timeline</span>
+            </div>
+            <i class="fa-solid fa-chevron-right option-arrow"></i>
+          </div>
+
+          <div class="option-card" onclick="switchAboutTab('credentials')">
+            <div class="option-card-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div class="option-card-info">
+              <h4>Credentials</h4>
+              <span>Certificates & Awards</span>
+            </div>
+            <i class="fa-solid fa-chevron-right option-arrow"></i>
+          </div>
+
+          <div class="option-card" onclick="switchAboutTab('skills')">
+            <div class="option-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="option-card-info">
+              <h4>Skills</h4>
+              <span>Language competencies</span>
+            </div>
+            <i class="fa-solid fa-chevron-right option-arrow"></i>
+          </div>
+        </div>
+
+        <div class="about-tab-display">
+          <div id="atab-journey" class="atab-panel active">
+            <div class="panel-header">
+              <h3><i class="fa-solid fa-compass"></i> Academic Journey</h3>
+              <button class="back-link-btn" onclick="resetAboutTab()"><i class="fa-solid fa-arrow-left"></i> Back to Options</button>
+            </div>
+            <ul>
+                <li>2021: CSS Beginner</li>
+                <li>2024: Completed CSS NC2 </li>
+                <li>2024: Java Beginner</li>
+                <li>2025: C# & Python Beginner</li>
+                <li>2026: Web Developer Beginner</li>
+            </ul>
+          </div>
+
+          <div id="atab-credentials" class="atab-panel">
+            <div class="panel-header">
+              <h3><i class="fa-solid fa-certificate"></i> Credentials & Certifications</h3>
+              <button class="back-link-btn" onclick="resetAboutTab()"><i class="fa-solid fa-arrow-left"></i> Back to Options</button>
+            </div>
+            <div class="carousel-container">
+              <button class="carousel-btn prev-btn" onclick="scrollCarousel('cert-carousel', -1)" aria-label="Move Left"><i class="fa-solid fa-chevron-left"></i></button>
+              <div class="carousel-track-wrapper" id="cert-carousel">
+                <div class="carousel-track">
+                  <div class="carousel-item cert-item">
+                    <img src="certificate/AA.jpg" alt="Certificate AA" class="cert-img" onerror="this.src='https://placehold.co/400x300/181818/d4af37?text=Certificate+AA'"/>
+                  </div>
+                  <div class="carousel-item cert-item">
+                    <img src="certificate/BB.jpg" alt="Certificate BB" class="cert-img" onerror="this.src='https://placehold.co/400x300/181818/d4af37?text=Certificate+BB'"/>
+                  </div>
+                  <div class="carousel-item cert-item">
+                    <img src="certificate/CC.jpg" alt="Certificate CC" class="cert-img" onerror="this.src='https://placehold.co/400x300/181818/d4af37?text=Certificate+CC'"/>
+                  </div>
+                  <div class="carousel-item cert-item">
+                    <img src="certificate/DD.jpg" alt="Certificate DD" class="cert-img" onerror="this.src='https://placehold.co/400x300/181818/d4af37?text=Certificate+DD'"/>
+                  </div>
+                  <div class="carousel-item cert-item">
+                    <img src="certificate/EE.jpg" alt="Certificate EE" class="cert-img" onerror="this.src='https://placehold.co/400x300/181818/d4af37?text=Certificate+EE'"/>
+                  </div>
+                  <div class="carousel-item cert-item">
+                    <img src="certificate/FF.jpg" alt="Certificate FF" class="cert-img" onerror="this.src='https://placehold.co/400x300/181818/d4af37?text=Certificate+FF'"/>
+                  </div>
+                  <div class="carousel-item cert-item">
+                    <img src="certificate/GG.jpg" alt="Certificate GG" class="cert-img" onerror="this.src='https://placehold.co/400x300/181818/d4af37?text=Certificate+GG'"/>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn next-btn" onclick="scrollCarousel('cert-carousel', 1)" aria-label="Move Right"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <div id="atab-skills" class="atab-panel">
+            <div class="panel-header">
+              <h3><i class="fa-solid fa-code"></i> Core Technologies</h3>
+              <button class="back-link-btn" onclick="resetAboutTab()"><i class="fa-solid fa-arrow-left"></i> Back to Options</button>
+            </div>
+            
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-top">
+                  <div class="skill-brand">
+                    <span class="skill-title">HTML5</span>
+                  </div>
+                  <span class="skill-badge">30%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="width: 30%;"></div>
+                </div>
+                <div class="skill-footer">
+                  <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Developing Expertise</span>
+                  <span class="level-num">Line 01/06</span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-top">
+                  <div class="skill-brand">
+                    <span class="skill-title">CSS3 & Styling</span>
+                  </div>
+                  <span class="skill-badge">28%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="width: 28%;"></div>
+                </div>
+                <div class="skill-footer">
+                  <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Developing Expertise</span>
+                  <span class="level-num">Line 02/06</span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-top">
+                  <div class="skill-brand">
+                    <span class="skill-title">Python</span>
+                  </div>
+                  <span class="skill-badge">25%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="width: 25%;"></div>
+                </div>
+                <div class="skill-footer">
+                  <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Developing Expertise</span>
+                  <span class="level-num">Line 03/06</span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-top">
+                  <div class="skill-brand">
+                    <span class="skill-title">Java</span>
+                  </div>
+                  <span class="skill-badge">20%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="width: 20%;"></div>
+                </div>
+                <div class="skill-footer">
+                  <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Fundamental Expertise</span>
+                  <span class="level-num">Line 04/06</span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-top">
+                  <div class="skill-brand">
+                    <span class="skill-title">C#</span>
+                  </div>
+                  <span class="skill-badge">10%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="width: 10%;"></div>
+                </div>
+                <div class="skill-footer">
+                  <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Fundamental Expertise</span>
+                  <span class="level-num">Line 05/06</span>
+                </div>
+              </div>
+
+              <div class="skill-card">
+                <div class="skill-top">
+                  <div class="skill-brand">
+                    <span class="skill-title">JavaScript</span>
+                  </div>
+                  <span class="skill-badge">2%</span>
+                </div>
+                <div class="skill-track">
+                  <div class="skill-fill" style="width: 2%;"></div>
+                </div>
+                <div class="skill-footer">
+                  <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Beginner Level</span>
+                  <span class="level-num">Line 06/06</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-skills" class="page-section">
+      <div class="section-title">
+        <span class="eyebrow"><i class="fa-solid fa-code-branch"></i> COMPETENCIES</span>
+        <h2>Programming Skills & Progress</h2>
+        <p>Hover over any programming language card to reveal enhanced hover effects!</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-brand">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" class="skill-logo"/>
+              <span class="skill-title">HTML5</span>
+            </div>
+            <span class="skill-badge">30%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width: 30%;"></div>
+          </div>
+          <div class="skill-footer">
+            <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Developing Expertise</span>
+            <span class="level-num">Line 01/06</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-brand">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo" class="skill-logo"/>
+              <span class="skill-title">CSS3 & Styling</span>
+            </div>
+            <span class="skill-badge">28%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width: 28%;"></div>
+          </div>
+          <div class="skill-footer">
+            <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Developing Expertise</span>
+            <span class="level-num">Line 02/06</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-brand">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" class="skill-logo"/>
+              <span class="skill-title">Python</span>
+            </div>
+            <span class="skill-badge">25%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width: 25%;"></div>
+          </div>
+          <div class="skill-footer">
+            <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Developing Expertise</span>
+            <span class="level-num">Line 03/06</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-brand">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Logo" class="skill-logo"/>
+              <span class="skill-title">Java</span>
+            </div>
+            <span class="skill-badge">20%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width: 20%;"></div>
+          </div>
+          <div class="skill-footer">
+            <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Fundamental Expertise</span>
+            <span class="level-num">Line 04/06</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-brand">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C# Logo" class="skill-logo"/>
+              <span class="skill-title">C#</span>
+            </div>
+            <span class="skill-badge">10%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width: 10%;"></div>
+          </div>
+          <div class="skill-footer">
+            <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Fundamental Expertise</span>
+            <span class="level-num">Line 05/06</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-brand">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo" class="skill-logo"/>
+              <span class="skill-title">JavaScript</span>
+            </div>
+            <span class="skill-badge">2%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width: 2%;"></div>
+          </div>
+          <div class="skill-footer">
+            <span class="expertise-label"><i class="fa-solid fa-circle-check"></i> Beginner Level</span>
+            <span class="level-num">Line 06/06</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-projects" class="page-section">
+      <div class="section-title">
+        <span class="eyebrow"><i class="fa-solid fa-laptop-code"></i> PORTFOLIO WORK</span>
+        <h2>Featured Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="PROJ/ATS.png" alt="Alumni Tracer System" onerror="this.src='https://placehold.co/600x400/181818/d4af37?text=Alumni+Tracer+System'"/>
+            <div class="project-overlay">
+              <button class="btn btn-solid" onclick="alert('Viewing DCCP Alumni Tracer System details...')"><i class="fa-solid fa-eye"></i> View Details</button>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat"><i class="fa-solid fa-folder"></i> Capstone Project</span>
+            <h3 class="project-name">DCCP Alumni Tracer System</h3>
+            <p class="project-desc">A web-based tracking system built with PHP and MySQL to manage alumni registration, batch surveys, and employment reporting for college accreditation.</p>
+            <p>STATUS: On Going...</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <img src="PROJ/Onyx.png" alt="Onyx_Browser" onerror="this.src='https://placehold.co/600x400/181818/d4af37?text=Student+Portal'"/>
+            <div class="project-overlay">
+              <button class="btn btn-solid" onclick="alert('Viewing Student Portal details...')"><i class="fa-solid fa-eye"></i> View Details</button>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat"><i class="fa-solid fa-folder"></i> Database Portal</span>
+            <h3 class="project-name">Onyx_Browser</h3>
+            <p class="project-desc">A simple browser for you to search</p>
+            <p>STATUS: On Going...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-services" class="page-section">
+      <div class="section-title">
+        <span class="eyebrow"><i class="fa-solid fa-gears"></i> SERVICES OFFERED</span>
+        <h2>What I Can Do</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-box">
+          <div class="service-icon"><i class="fa-solid fa-desktop"></i></div>
+          <span class="service-num">01</span>
+          <h3>Computer Tech Support</h3>
+          <p>PC hardware assembly, diagnostics, cleaning, and operating system installations.</p>
+        </div>
+        <div class="service-box">
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <span class="service-num">02</span>
+          <h3>Web Development</h3>
+          <p>Creating responsive, modern web layouts using HTML5, CSS3, JavaScript, and PHP.</p>
+        </div>
+        <div class="service-box">
+          <div class="service-icon"><i class="fa-solid fa-sliders"></i></div>
+          <span class="service-num">03</span>
+          <h3>System Design & UI</h3>
+          <p>Designing wireframes, intuitive dashboard interfaces, and interactive software components.</p>
+        </div>
+        <div class="service-box">
+          <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <span class="service-num">04</span>
+          <h3>Basic Networking</h3>
+          <p>Configuring router setups, local area networks (LAN), and network trouble diagnosis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-credentials" class="page-section">
+      <div class="section-title">
+        <span class="eyebrow"><i class="fa-solid fa-certificate"></i> ACHIEVEMENTS</span>
+        <h2>Credentials & Qualifications</h2>
+      </div>
+      <div class="credentials-list">
+        <div class="cred-card">
+          <div class="cred-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="cred-details">
+            <h3>BS Information Technology Candidate</h3>
+            <p>Data Center College of the Philippines (DCCP - Baguio Campus)</p>
+          </div>
+          <span class="cred-badge">Current</span>
+        </div>
+        <div class="cred-card">
+          <div class="cred-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="cred-details">
+            <h3>Computer Systems Servicing (CSS) NCII</h3>
+            <p>Technical Education and Skills Development Authority (TESDA)</p>
+          </div>
+          <span class="cred-badge">Certified</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-contact" class="page-section">
+      <div class="section-title">
+        <span class="eyebrow"><i class="fa-solid fa-paper-plane"></i> CONTACT ME</span>
+        <h2>Let's Connect</h2>
+      </div>
+      <div class="contact-dual-grid">
+        <div class="contact-box">
+          <h3><i class="fa-solid fa-envelope"></i> Send Direct Message</h3>
+          <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <div class="form-group">
+              <label><i class="fa-solid fa-user"></i> Your Name:</label>
+              <input type="text" class="form-input" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label><i class="fa-solid fa-at"></i> Your Email:</label>
+              <input type="email" class="form-input" placeholder="Enter your email address" required />
+            </div>
+            <div class="form-group">
+              <label><i class="fa-solid fa-message"></i> Message:</label>
+              <textarea class="form-input" rows="4" placeholder="Type your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-solid w-100"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          </form>
+
+          <div class="contact-info-footer">
+            <div class="info-item"><i class="fa-solid fa-envelope"></i> onyx_neko.21@gmail.com</div>
+            <div class="info-item"><i class="fa-brands fa-facebook"></i> FACEBOOK: Rain Lingben</div>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <h3><i class="fa-solid fa-comments"></i> Leave a Comment & Image</h3>
+          <form onsubmit="event.preventDefault(); alert('Comment posted successfully!');">
+            <div class="form-group">
+              <label><i class="fa-solid fa-user-pen"></i> Your Name:</label>
+              <input type="text" class="form-input" placeholder="Your display name" required />
+            </div>
+            <div class="form-group">
+              <label><i class="fa-solid fa-comment-dots"></i> Public Comment:</label>
+              <textarea class="form-input" rows="3" placeholder="Share your feedback..." required></textarea>
+            </div>
+            <div class="form-group">
+              <label><i class="fa-solid fa-image"></i> Attach Image (optional):</label>
+              <input type="file" class="form-input file-input" accept="image/*" />
+            </div>
+            <button type="submit" class="btn btn-outline w-100"><i class="fa-solid fa-share-nodes"></i> Post Comment</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 Rain Bentres. Information Technology Student • DCCP.</p>
+      <button class="back-top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <i class="fa-solid fa-arrow-up"></i> Back to top
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    function dismissWelcomeOverlay() {
+      const overlay = document.getElementById('welcome-overlay');
+      if (overlay) {
+        overlay.classList.add('hidden');
+        setTimeout(() => overlay.style.display = 'none', 600);
+      }
+    }
+
+    setTimeout(dismissWelcomeOverlay, 1000);   // loading screen closes by itself after 1 second
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const themeBtn = document.getElementById('themeToggleBtn');
+      const currentTheme = html.getAttribute('data-theme');
+
+      if (currentTheme === 'light') {
+        html.setAttribute('data-theme', 'dark');
+        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      } else {
+        html.setAttribute('data-theme', 'light');
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      }
+    }
+
+    function toggleMobileSidebar() {
+      document.getElementById('mobileOverlay').classList.toggle('active');
+      document.getElementById('mobileSidebar').classList.toggle('active');
+    }
+
+    function navigateTo(pageId) {
+      if (pageId === 'journey') { navigateTo('about'); switchAboutTab('journey'); return; }
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+
+      const navBtns = document.querySelectorAll('.desktop-nav .nav-btn');
+      navBtns.forEach(btn => btn.classList.remove('active'));
+
+      const targetSection = document.getElementById('section-' + pageId);
+      const targetNav = document.getElementById('nav-' + pageId);
+
+      if (targetSection) targetSection.classList.add('active');
+      if (targetNav) targetNav.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const id = location.hash.replace('#', '');
+      if (id && id !== 'home') navigateTo(id);
+    });
+
+    let current3DAngle = 0;
+    function rotateCarousel(angleStep) {
+      current3DAngle += angleStep;
+      const stage = document.getElementById('carouselStage');
+      if (stage) {
+        stage.style.transform = `rotateY(${current3DAngle}deg)`;
+      }
+    }
+
+    function switchAboutTab(tabName) {
+      const panels = document.querySelectorAll('.atab-panel');
+      panels.forEach(p => p.classList.remove('active'));
+
+      const targetPanel = document.getElementById('atab-' + tabName);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function resetAboutTab() {
+      const panels = document.querySelectorAll('.atab-panel');
+      panels.forEach(p => p.classList.remove('active'));
+      document.getElementById('atab-journey').classList.add('active');
+    }
+
+    function scrollCarousel(containerId, direction) {
+      const container = document.getElementById(containerId);
+      if (container) {
+        const scrollAmount = 320 * direction;
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    // 🎵 MUSIC — local files (keep these .m4a files in the same folder as rain.html)
+    const playlist = [
+      { title: "Fetty Wap - Trap Queen", src: "Fetty Wap - Trap Queen _ Lyric Video(M4A_128K).m4a" },
+      { title: "So Sick - Ne-Yo", src: "So Sick - Ne-Yo (Lyrics) 🎵(M4A_128K).m4a" },
+      { title: "Skusta Clee - SA SUSUNOD NALANG", src: "Skusta Clee - SA SUSUNOD NALANG (LYRICS)(M4A_128K).m4a" },
+      { title: "Sean Kingston, Justin Bieber - Eenie Meenie", src: "Sean Kingston_ Justin Bieber - Eenie Meenie (Lyrics)(M4A_128K).m4a" },
+      { title: "Trouble Maker - Trouble Maker", src: "Trouble Maker - Trouble Maker (Color Coded Lyrics Eng_Rom_Han_가사)(M4A_128K).m4a" },
+      { title: "Loonie ft. Quest - Tao Lang", src: "Tao lang with Lyrics by_ Loonie ft. quest(M4A_128K).m4a" },
+      { title: "Teh Hijau - TULUS", src: "Teh Hijau - TULUS (Lirik Lagu)(M4A_128K).m4a" }
+    ];
+
+    // ═══════════════════════════════════════════════════════════════
+    //  🎬 CAPCUT VIDEOS — paste ONE of these between the quotes for each edit:
+    //    • the CapCut share link (CapCut app → Share → Copy Link). The extra hashtags/text CapCut adds are ignored.
+    //    • the full <iframe ...></iframe> embed code
+    //    • a direct video file link (.mp4 / .webm / .mov)
+    //  Empty "" = the slot shows "Add CapCut link".
+    // ═══════════════════════════════════════════════════════════════
+    const CAPCUT = {
+      // portrait edits
+      a: "", d: "", e: "", f: "", g: "", h: "", j: "", k: "", l: "", m: "", n: "", o: "", p: "",
+      // landscape / source template edits
+      b: "", c: "", s: "", i: "", q: "", r: ""
+    };
+
+    /* ---------- helpers ---------- */
+    function firstUrl(raw) {                       // finds the link inside whatever was pasted
+      raw = String(raw || '');
+      const m = raw.match(/src\s*=\s*["']([^"']+)["']/i) || raw.match(/https?:\/\/[^\s"'<>]+/i);
+      return m ? (m[1] || m[0]) : '';
+    }
+
+    function ytId(raw) {                           // YouTube / YouTube Music link → 11-character video id
+      const t = firstUrl(raw) || String(raw || '').trim();
+      if (/^[\w-]{11}$/.test(t)) return t;
+      try {
+        const u = new URL(t), host = u.hostname.replace(/^www\./, '');
+        let id = '';
+        if (host === 'youtu.be') id = u.pathname.slice(1, 12);
+        else if (/(^|\.)youtube(-nocookie)?\.com$/.test(host)) {
+          id = u.searchParams.get('v') || ((u.pathname.match(/^\/(?:embed|shorts|live)\/([\w-]{11})/) || [])[1] || '');
+        }
+        return /^[\w-]{11}$/.test(id) ? id : '';
+      } catch (e) { return ''; }
+    }
+
+    /* ---------- CapCut slots ---------- */
+    function initCapcutSlots() {
+      const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (!en.isIntersecting) return;
+          const el = en.target.querySelector('[data-src]');
+          if (el) { el.src = el.dataset.src; delete el.dataset.src; }
+          io.unobserve(en.target);
+        });
+      }, { rootMargin: '200px' }) : null;
+
+      document.querySelectorAll('.capcut-slot').forEach(slot => {
+        const url = firstUrl(CAPCUT[slot.dataset.capcut]);
+        const frame = slot.querySelector('iframe'), empty = slot.querySelector('.capcut-empty'), open = slot.querySelector('.capcut-open');
+        slot.querySelectorAll('video').forEach(v => v.remove());
+        slot.classList.toggle('has-link', !!url);
+        empty.hidden = !!url; open.hidden = !url;
+        if (!url) { frame.removeAttribute('src'); frame.hidden = false; return; }
+        open.href = url;
+        let target = frame;
+        if (/\.(mp4|webm|mov|m4v)(\?|#|$)/i.test(url)) {          // direct video file → normal player
+          target = document.createElement('video');
+          target.controls = true; target.playsInline = true; target.preload = 'none';
+          slot.insertBefore(target, frame); frame.hidden = true; frame.removeAttribute('src');
+        } else {
+          frame.hidden = false;
+          const yt = ytId(url);                                      // a YouTube link works here too
+          target.dataset.src = yt ? 'https://www.youtube.com/embed/' + yt : url;
+          if (io) io.observe(slot); else { target.src = target.dataset.src; }
+          return;
+        }
+        target.dataset.src = url;
+        if (io) io.observe(slot); else { target.src = url; }
+      });
+    }
+    window.addEventListener('DOMContentLoaded', initCapcutSlots);
+
+    /* ---------- music player (local files) ---------- */
+    const audio = document.getElementById('portfolioAudio');
+    const playIcon = document.getElementById('playIcon');
+    const audioProgress = document.getElementById('audioProgress');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationTimeEl = document.getElementById('durationTime');
+    const trackTitleEl = document.getElementById('trackTitle');
+    audio.preload = 'metadata';
+
+    let currentTrackIndex = 0;
+
+    function formatTime(seconds) {
+      seconds = seconds || 0;
+      const mins = Math.floor(seconds / 60), secs = Math.floor(seconds % 60);
+      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+    function setIcon(on) { playIcon.className = on ? 'fa-solid fa-pause' : 'fa-solid fa-play'; }
+
+    function loadTrack(index) {
+      audio.src = encodeURI(playlist[index].src);
+      trackTitleEl.innerText = playlist[index].title;
+      audioProgress.value = 0;
+      currentTimeEl.innerText = '0:00';
+      durationTimeEl.innerText = '0:00';
+    }
+
+    function playSafe() {
+      const p = audio.play();
+      if (p && p.catch) p.catch(() => setIcon(false));     // file missing or browser blocked autoplay
+      setIcon(true);
+    }
+
+    function toggleAudioPlay() {
+      if (audio.paused) playSafe();
+      else { audio.pause(); setIcon(false); }
+    }
+
+    function changeTrack(step) {
+      const wasPlaying = !audio.paused;
+      currentTrackIndex = (currentTrackIndex + step + playlist.length) % playlist.length;
+      loadTrack(currentTrackIndex);
+      if (wasPlaying) playSafe();
+    }
+    function nextAudio() { changeTrack(1); }
+    function prevAudio() { changeTrack(-1); }
+
+    audio.addEventListener('ended', () => { changeTrack(1); playSafe(); });
+    audio.addEventListener('error', () => setIcon(false));
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        audioProgress.value = (audio.currentTime / audio.duration) * 100;
+        currentTimeEl.innerText = formatTime(audio.currentTime);
+        durationTimeEl.innerText = formatTime(audio.duration);
+      }
+    });
+    function seekAudio() {
+      if (audio.duration) audio.currentTime = audio.duration * (audioProgress.value / 100);
+    }
+
+    loadTrack(currentTrackIndex);
+  </script>
+</body>
+</html>
